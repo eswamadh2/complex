@@ -1,0 +1,20 @@
+name: complex
+On: push
+jobs:
+   ubuntu:
+     runs-on: ubuntu:latest
+     steps:
+     - run: print 'date'
+   windows:
+     runs-on: windows:latest
+     steps:
+     - run: print 'date'
+   mac:
+     runs-on: macos:latest
+     steps:
+     - run: print 'date'
+   others:
+     needs: [ubuntu, windows,macos]
+     runs-on: ubuntu:latest
+     steps:
+     - run: print 'date'
